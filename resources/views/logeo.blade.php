@@ -1,11 +1,106 @@
 @extends('layouts.esquema')
 
+@section('style')
+    <style>
+
+@font-face {
+  font-family: logo;
+  src: url(fuentes/ledbetter.woff);
+}
+
+@font-face {
+  font-family: subtitulos;
+  src: url(fuentes/Hungtrey_Beatmora.otf);
+}
+
+@font-face {
+  font-family: narracion;
+  src: url(fuentes/Avenis.otf);
+}
+
+#title {
+    font-family: logo;
+    font-size: 2.6em;
+    color: #E07F84;
+    scale: 1.3;
+}
+
+#description {
+    font-family: narracion;
+}
+
+body {
+    background: #ccc;
+}
+
+#very-card {
+    font-family: logo;
+}
+
+
+input,
+p,
+a {
+    font-size: 1.1em;
+}
+
+.flagticon{
+    background-size: cover;
+    width:2.5em;
+    border-radius: .2em;
+    margin:0;
+
+}
+
+
+#btn_create {
+    background: #7FB2F9;
+    color: #fff;
+    border: 2px solid #7FB2F9
+}
+
+#submit {
+    background: #7FB2F9;
+    color: #fff;
+    border: 2px solid #7FB2F9
+}
+
+#btn_regresar {
+    background: #E07F84;
+    border: 2px #E07F84 solid;
+}
+
+
+#logo {
+    font-family: logo;
+    font-size: 3em;
+    color: #E07F84;
+}
+
+svg {
+    color: #E07F84;
+}
+
+.paddington {
+    padding: 0em .3em
+}
+
+.junior img {
+    background-size: cover;
+    width: 2em;
+    border-radius: .2em;
+    margin: 0
+}
+
+        </style>
+@endsection
+
 @section('body')
     <div class="row">
-        <div class="col-12 mt-5 px-5 bg-white rounded-4 shadow" id="very-card">
+        <div class="col-12 mt-0 px-5 bg-white rounded-4 shadow" id="very-card">
 
             <div class="row">
-                <div class="col-12 card border-0 mt-3" style="width: 19em;">
+                <div class="col-12 card border-0 mt-0" style="width: 19em;">
                     <div class="card-body" id="description">
 
                         <h5 class="card-title text-center mt-3 mb-5" style="scale: 1.8;" id="title">Stringify</h5>
@@ -20,10 +115,7 @@
                                     <path fill-rule="evenodd"
                                         d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                                 </svg>
-
                             </span>
-
-
                             <input type="text" class="form-control nombres"
                                 aria-describedby="validationTooltipUsernamePrepend" v-model="name" name="name" placeholder="Nombres"  required>
                         </div>
@@ -52,16 +144,13 @@
                             </span>
                             <input type="password" class="form-control"
                                  placeholder="Clave secreta" v-model="pass" name="pass"
-                                required>
+                                 required>
                         </div>
 
 
                         <div class="input-group has-validation mt-1">
                             <span class="input-group-text junior" >
-                                <img
-                                    :src=actual
-                                    class="flagticon"
-                                />
+                                <img  class="flagticon"/>
                             </span>
 
                             <select   class="form-control" onclick="mostrarBandera()"
@@ -75,7 +164,7 @@
 
                         <br>
 
-                        <input type="submit" class="btn" id="btn_create" value="REGISTRAR">
+                        <input type="submit" class="btn" id="btn_create" value="Registrar">
                     </form>
 
                     <hr>
@@ -88,7 +177,7 @@
                     </p>
 
 
-                    <a class="btn btn-primary" id="btn_regresar"> Come Back </a>
+                    <a href="/landing" class="btn btn-primary" id="btn_regresar"> Come Back </a>
 
                     <footer
                         class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 mt-5 pt-3 pb-1 border-top text-center">

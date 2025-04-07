@@ -15,7 +15,7 @@
 
     <div class="card-group mt-sm-5" id="group-cards">
   <div class="card">
-    <img src="../../public/img/Franz_Kafka.jpg" class="card-img-top" alt="...">
+    <img src="img/Franz_Kafka.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Franz Kafka</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="card">
-    <img src="../../public/img/fiodor.jpg" class="card-img-top" alt="...">
+    <img src="img/fiodor.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Fiodor D.</h5>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -31,7 +31,7 @@
     </div>
   </div>
   <div class="card">
-    <img src="../../public/img/stefan.jpg" class="card-img-top" alt="...">
+    <img src="img/stefan.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Stefan Zweig</h5>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>

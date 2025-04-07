@@ -12,7 +12,7 @@
                 <footer class="blockquote-footer">Jean il <cite title="Source Title">, Siete horas</cite></footer>
                 </blockquote>
                 <br>
-                <a href="#" class="btn btn-primary">Seguir+</a>
+                <p class="btn btn-primary">Seguir+</p>
             </div>
 
         </div>

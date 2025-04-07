@@ -15,11 +15,11 @@
         <div class="col-6 d-flex justify-content-end pe-2">
 
             <p class="mt-1 mb-0">
-                <img src="../../../public/build/assets/img/campana-bold.png" id="notice">
+                <a href="/notify"><img src="img/campana-bold.png" id="notice"></a>
             </p>
 
             <p class="mt-1 mb-0 ms-3 me-2">
-                <a href="/logeo"><img src="../../../public/build/assets/img/avatar.png" class="rounded-5" id="nick"></a>
+                <a href="/profile"><img src="img/avatar.png" class="rounded-5" id="nick"></a>
             </p>
 
         </div>
