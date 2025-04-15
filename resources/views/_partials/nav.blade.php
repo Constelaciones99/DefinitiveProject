@@ -19,7 +19,12 @@
             </p>
 
             <p class="mt-1 mb-0 ms-3 me-2">
-                <a href="/profile"><img src="img/avatar.png" class="rounded-5" id="nick"></a>
+                <a href="/profile">
+    <img src="{{ asset(auth()->user()->portrait ?? 'img/avatar.png') }}"
+         class="rounded-circle"
+         style="width: 48px; height: 48px; object-fit: cover;"
+         id="nick">
+</a>
             </p>
 
         </div>

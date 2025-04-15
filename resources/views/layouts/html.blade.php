@@ -1,3 +1,7 @@
+<?php
+    use Illuminate\Support\Facades\Session;
+    $username = Session::get('username');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

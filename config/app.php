@@ -1,5 +1,6 @@
 <?php
 
+
 return [
 
     /*
@@ -12,6 +13,7 @@ return [
     | other UI elements where an application name needs to be displayed.
     |
     */
+
 
     'name' => env('APP_NAME', 'Laravel'),
 
@@ -67,6 +69,7 @@ return [
 
     'timezone' => 'UTC',
 
+
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -78,7 +81,7 @@ return [
     |
     */
 
-    'locale' => env('APP_LOCALE', 'en'),
+    'locale' => env('APP_LOCALE', 'es'),
 
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
@@ -98,6 +101,7 @@ return [
     'cipher' => 'AES-256-CBC',
 
     'key' => env('APP_KEY'),
+
 
     'previous_keys' => [
         ...array_filter(

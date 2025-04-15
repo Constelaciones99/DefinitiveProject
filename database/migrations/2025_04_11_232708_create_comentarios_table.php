@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('books', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->integer('pages');
-            $table->timestamps();
+        Schema::create('comentarios', function (Blueprint $table) {
+            $table->id('id_comm');
+            $table->string('username');
+            $table->longText('detail');
+
+            $table->foreign('username')->references('username')->on('users')->onDelete('cascade');
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::drop('books');
+        Schema::dropIfExists('comentarios');
     }
 };

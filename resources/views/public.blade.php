@@ -55,7 +55,7 @@ a {
     color: #fff;
 }
 
-#submit {
+#submitBtn {
     background: #7FB2F9;
     color: #fff;
     border: 2px solid #7FB2F9
@@ -76,6 +76,11 @@ a {
 @endsection
 
 @section('body')
+@php
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
+@endphp
 <row class="row">
     <div class="col-12 px-5 pt-4 mt-0 bg-white rounded-4 shadow" id="very-card">
         <div class="row">
@@ -84,12 +89,12 @@ a {
                 <div class="card-body" id="description">
                     <h5 class="card-title" id="title">Cuenta Pública</h5>
                     <hr>
-                    <form action="#">
-
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
                         <div class="input-group has-validation mb-1">
                             <span class="input-group-text" id="validationTooltipUsernamePrepend">🙋🏻‍♂️</span>
                             <input type="text" class="form-control" id="validationTooltipUsername"
-                                aria-describedby="validationTooltipUsernamePrepend" v-model="user" name="user" placeholder="/Nombre de Usuario"
+                                aria-describedby="validationTooltipUsernamePrepend" name="username" placeholder="/Nombre de Usuario"
                                 required>
                             <div class="invalid-tooltip">
                                 Please choose a unique and valid username.
@@ -98,16 +103,22 @@ a {
 
                         <div class="input-group has-validation">
                             <span class="input-group-text" id="validationTooltipUsernamePrepend">🔑</span>
-                            <input type="password" class="form-control" name="pass"
+                            <input type="password" class="form-control" name="password"
                                 aria-describedby="validationTooltipUsernamePrepend" v-model="pass" placeholder="/Clave secreta"
                                 required>
-                            <div class="invalid-tooltip">
-                                Please choose a unique and valid username.
-                            </div>
+                            @if ($errors->has('login_error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ $errors->first('login_error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
                         </div>
                         <br>
                             <a href="/logeo" class="btn" id="btn_create">Crear Cuenta+</a>
-                            <input type="button" value="Ingresar" class="btn" id="submit">
+                            <input type="submit" value="Ingresar" class="btn" id="submitBtn">
+                        <div class="spinner-border text-primary d-none" role="status" id="loginSpinner">
+  <span class="visually-hidden">Cargando...</span>
+</div>
                     </form>
                     <hr>
                     <p class="card-text">
@@ -125,4 +136,19 @@ a {
         </div>
     </div>
 </row>
+<script>
+    const form = document.querySelector('form');
+    const submitBtn = document.getElementById('submitBtn');
+    const spinner = document.getElementById('loginSpinner');
+
+    form.addEventListener('submit', () => {
+        submitBtn.disabled = true;
+        spinner.classList.remove('d-none');
+    });
+</script>
+@if(Session::has('username'))
+    <script>
+        window.location.href = "/";
+    </script>
+@endif
 @endsection

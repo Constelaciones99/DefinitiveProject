@@ -68,6 +68,11 @@ a {
         </style>
 @endsection
 @section('body')
+@php
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
+@endphp
 <div class="row">
     <div class="col-12  px-5 pt-4 mt-0 bg-white rounded-4 shadow" id="very-card">
         <div class="row">
@@ -105,4 +110,9 @@ a {
         </div>
     </div>
 </div>
+@if(Session::has('username'))
+    <script>
+        window.location.href = "/";
+    </script>
+@endif
 @endsection

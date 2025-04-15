@@ -102,6 +102,14 @@ button#narracion {
 @endsection
 
 @section('body')
+
+@php
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
+@endphp
+
+
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-9 ms-xxl-5">
         <div class="row">
 
@@ -109,6 +117,12 @@ button#narracion {
                 <span class="capital">S</span>tringify
             </p>
         <!-- <hr class="text-white mb-0 pb-0 pb-xl-5 mb-xl-5 pt-4 "> -->
+
+            <span>
+                @if (session('error'))
+                    <p style="color: red;">{{ session('error') }}</p>
+                @endif
+            </span>
 
             <div class="col-12 rounded-3 pt-4" id="pagina">
 
@@ -185,4 +199,9 @@ button#narracion {
             </div>
         </div>
     </div>
+    @if(Session::has('username'))
+    <script>
+        window.location.href = "/";
+    </script>
+@endif
 @endsection

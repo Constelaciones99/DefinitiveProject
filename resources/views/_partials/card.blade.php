@@ -3,7 +3,16 @@
         <div class="card mx-1">
 
             <div class="card-header">
-                <div>(Bandera) Stefan Zweig: </div>
+                @if(session('username'))
+    <p>Bienvenido, {{ session('username') }}</p>
+    <div>(Bandera)
+    ¡Bienvenido, {{ Session::get('username') }}!
+                </div>
+@else
+    <p>No estás autenticado.</p>
+@endif
+
+
             </div>
 
             <div class="card-body">
@@ -12,6 +21,7 @@
                 <footer class="blockquote-footer">Jean il <cite title="Source Title">, Siete horas</cite></footer>
                 </blockquote>
                 <br>
+
                 <p class="btn btn-primary">Seguir+</p>
             </div>
 
